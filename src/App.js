@@ -10,6 +10,9 @@ function App() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
+	// const isAdmin = searchParams.get('admin');
+	const search = window.location.search;
+
 	useEffect(() => {
 		axios
 			.get('https://wp.easypress.lillo.co.kr/wp-json/ep/v1/rullets')
@@ -212,7 +215,7 @@ function App() {
 				setTimeout(() => {
 					setStep(3);
 					setIsSpinning(false);
-					// localStorage.setItem('is_join', 1);
+					localStorage.setItem('is_join', 1);
 				}, 300);
 			} else {
 				setIsSpinning(false);
@@ -245,9 +248,11 @@ function App() {
 		<div className="App">
 			{step == 1 ? (
 				<div className="step-01">
-					<button onClick={() => localStorage.clear()} className="test-btn">
-						리셋 버튼
-					</button>
+					{search == '?admin=lapp' ? (
+						<button onClick={() => localStorage.clear()} className="test-btn">
+							리셋 버튼
+						</button>
+					) : null}
 					<img className="img-01" src="/Roulette-01.png" />
 					<div className="btn" onClick={DoStart} />
 				</div>
