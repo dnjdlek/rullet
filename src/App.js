@@ -305,11 +305,19 @@ function App() {
 						className={`d-${selectedItem?.ID} product`}
 						src={selectedItem?.img}
 					/>
-					<div className="text">
-						<strong>{selectedItem?.name}</strong>에 당첨되셨습니다!
-						<br />
-						랍코리아 <strong>네이버 스토어 찜</strong>을 누르고 선물을 받으세요.
-					</div>
+					{selectedItem?.ID == 4 ? (
+						<div className="text">
+							<strong>10% 할인쿠폰을 드려요!</strong>
+						</div>
+					) : (
+						<div className="text">
+							<strong>{selectedItem?.name}</strong>에 당첨되셨습니다!
+							<br />
+							랍코리아 <strong>네이버 스토어 찜</strong>을 누르고 선물을
+							받으세요.
+						</div>
+					)}
+
 					<div
 						className="btn"
 						onClick={() =>
