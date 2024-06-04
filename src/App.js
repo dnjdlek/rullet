@@ -269,6 +269,17 @@ function App() {
 						}
 						src="/rullet.png"
 					/>
+					<img src="/hand.png" className="i-01" />
+					<img
+						src="/center.png"
+						className={isSpinning ? 'i-02 isSpinning' : 'i-02'}
+						style={
+							isTry
+								? { transform: `translate(-50%, 0%) rotate(${deg}deg)` }
+								: null
+						}
+					/>
+					<div className="shadow" />
 					{/* {isSpinning ? 'isSpinning' : 'no isSpinning'}
 					{selectedItem ? selectedItem : 'no selectedItem'} */}
 					<div

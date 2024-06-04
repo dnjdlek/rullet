@@ -18,6 +18,7 @@
 	top: 42px;
 	left: 20px;
 	padding: 4px 10px;
+	z-index: 1;
 }
 .step-01 {
 	position: relative;
@@ -25,7 +26,7 @@
 
 .step-01 .btn {
 	position: absolute;
-	top: 54.4%;
+	top: 46.4%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 26%;
@@ -36,6 +37,7 @@
 .img-01 {
 	width: 100%;
 	height: auto;
+	transform: translateY(-8%);
 }
 
 .step-02 {
@@ -44,6 +46,52 @@
 .img-02 {
 	width: 100%;
 	height: auto;
+}
+.i-01 {
+	position: absolute;
+	top: 34.5%;
+	left: 50.5%;
+	transform: translate(-50%, 0%);
+	width: 9%;
+	height: auto;
+	/* border: 3px solid red; */
+	/* opacity: 0.5; */
+}
+.shadow {
+	position: absolute;
+	top: 49%;
+	left: 49.8%;
+	transform: translate(-50%, 0%);
+	width: 22%;
+	height: 9.5%;
+	/* padding-bottom: 100%; */
+	/* border: 2px solid red; */
+	box-shadow: 3px 3px 4px #d56843;
+	border-radius: 50%;
+
+	/* border: 3px solid red; */
+	/* opacity: 0.5; */
+}
+.i-02 {
+	position: absolute;
+	top: 49%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	width: 22%;
+	height: auto;
+	transition: 3.5s ease;
+	/* box-shadow: 5px 5px 5px #f58220; */
+	/* border-radius: 50%; */
+	/* opacity: 0.5; */
+}
+.s {
+	position: absolute;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	box-shadow: 5px 5px 5px #f58220;
 }
 .rullet {
 	position: absolute;
