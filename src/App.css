@@ -153,6 +153,9 @@
 	height: auto;
 }
 
+.product.d-4 {
+	max-width: 150px;
+}
 .product {
 	position: absolute;
 	top: 46.3%;
@@ -160,6 +163,13 @@
 	transform: translate(-50%, -50%);
 	max-width: 180px;
 	max-height: 150px;
+}
+.product.d-1 {
+	top: 44%;
+	left: 42%;
+	transform: translate(-50%, -50%);
+	max-width: 240px;
+	max-height: 640px;
 }
 
 .hidden {

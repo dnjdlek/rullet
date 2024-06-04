@@ -167,6 +167,7 @@ function App() {
 				break;
 			}
 		}
+		// randomIndex = 3;
 
 		// items.map((i, k) => {
 		// 	let sum = sum + i.p;
@@ -218,8 +219,11 @@ function App() {
 					localStorage.setItem('is_join', 1);
 				}, 300);
 			} else {
-				setIsSpinning(false);
-				console.log('try again');
+				setTimeout(() => {
+					setStep(5);
+					setIsSpinning(false);
+					// localStorage.setItem('is_join', 1);
+				}, 300);
 			}
 		}, 3500); // 3초 동안 회전
 
@@ -292,8 +296,15 @@ function App() {
 			) : null}
 			{step == 3 ? (
 				<div className="step-03">
-					<img className="img-03" src="/Roulette-03.png" />
-					<img className="product" src={selectedItem?.img} />
+					{selectedItem?.ID == 4 ? (
+						<img className="img-03" src="/Roulette-03.png" />
+					) : (
+						<img className="img-03" src="/Roulette-03.png" />
+					)}
+					<img
+						className={`d-${selectedItem?.ID} product`}
+						src={selectedItem?.img}
+					/>
 					<div className="text">
 						<strong>{selectedItem?.name}</strong>에 당첨되셨습니다!
 						<br />
@@ -302,9 +313,8 @@ function App() {
 					<div
 						className="btn"
 						onClick={() =>
-							window.open(
-								'https://m.smartstore.naver.com/lappkorea?NaPm=ct%3Dlwsujw6q%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3D971989eda5c632da8ebc4fffee4ff792d06a5b16'
-							)
+							(window.location.href =
+								'https://m.smartstore.naver.com/lappkorea?NaPm=ct%3Dlwsujw6q%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3D971989eda5c632da8ebc4fffee4ff792d06a5b16')
 						}
 					/>
 				</div>
@@ -318,17 +328,32 @@ function App() {
 					/>
 				</div>
 			) : null}
+			{step == 5 ? (
+				<div className="step-03">
+					<img className="img-03" src="/Roulette-05.png" />
+					{/* <img className="product" src={selectedItem?.img} /> */}
+					<div className="text">
+						{/* <strong>{selectedItem?.name}</strong>에 당첨되셨습니다!
+						<br />
+						랍코리아 <strong>네이버 스토어 찜</strong>을 누르고 선물을 받으세요. */}
+					</div>
+					<div className="btn" onClick={() => setStep(2)} />
+				</div>
+			) : null}
 
 			<div className="hidden">
 				<img className="pre" src="/Roulette-02.png" />
 				<img className="pre" src="/Roulette-03.png" />
 				<img className="pre" src="/Roulette-04.png" />
+				<img className="pre" src="/Roulette-05.png" />
 				<img className="pre" src="/item-01.png" />
 				<img className="pre" src="/item-02.png" />
 				<img className="pre" src="/item-03.png" />
 				<img className="pre" src="/item-04.png" />
 				<img className="pre" src="/item-05.png" />
 				<img className="pre" src="/item-06.png" />
+				<img className="pre" src="/hand.png" />
+				<img className="pre" src="/center.png" />
 			</div>
 		</div>
 	);
